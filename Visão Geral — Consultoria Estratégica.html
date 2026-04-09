@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/luiz/Downloads/visao_geral_consultoria_3.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visão Geral — Consultoria Estratégica</title>
+<link href="./Visão Geral — Consultoria Estratégica_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-pale: rgba(201,168,76,0.12);
+    --text: #f0ead8;
+    --text-muted: #8fa3b8;
+    --divider: rgba(201,168,76,0.2);
+    --card-bg: rgba(26,47,69,0.7);
+    --c1: #4aa3d8;
+    --c1-bg: rgba(42,100,150,0.12);
+    --c1-border: rgba(74,163,216,0.3);
+    --c2: #2ab89f;
+    --c2-bg: rgba(26,122,110,0.12);
+    --c2-border: rgba(42,184,159,0.3);
+    --c3: #8b65c5;
+    --c3-bg: rgba(90,62,138,0.12);
+    --c3-border: rgba(139,101,197,0.3);
+    --c4: #e07b3a;
+    --c4-bg: rgba(224,123,58,0.12);
+    --c4-border: rgba(224,123,58,0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 0%, rgba(42,100,150,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 100%, rgba(90,62,138,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 50% 80%, rgba(224,123,58,0.07) 0%, transparent 60%);
+    pointer-events: none; z-index: 0;
+  }
+  .page { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; padding: 0 44px 80px; }
+
+  /* HEADER */
+  header { padding: 60px 0 48px; border-bottom: 1px solid var(--divider); margin-bottom: 56px; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; animation: fadeUp 0.8s ease both; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 900; line-height: 1.08; }
+  h1 span { color: var(--gold); }
+  .header-meta { text-align: right; color: var(--text-muted); font-size: 13px; line-height: 1.8; }
+  .header-meta strong { color: var(--gold-light); display: block; font-size: 15px; margin-bottom: 4px; }
+
+  /* SECTION LABEL */
+  .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
+
+  /* STATS */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 64px; animation: fadeUp 0.8s 0.1s ease both; }
+  .stat-card { background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.25); border-radius: 14px; padding: 24px; text-align: center; }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+  /* PILARES */
+  .structure { margin-bottom: 72px; animation: fadeUp 0.8s 0.2s ease both; }
+  .structure-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+  .pillar { background: var(--card-bg); border: 1px solid var(--divider); border-radius: 16px; padding: 28px 24px; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+  .pillar:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.3); }
+  .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .pillar.p1::before { background: linear-gradient(90deg, #2a6496, var(--c1)); }
+  .pillar.p2::before { background: linear-gradient(90deg, #1a7a6e, var(--c2)); }
+  .pillar.p3::before { background: linear-gradient(90deg, #5a3e8a, var(--c3)); }
+  .pillar.p4::before { background: linear-gradient(90deg, #b85a1a, var(--c4)); }
+
+  /* ERP pillar special glow */
+  .pillar.p4 { border-color: rgba(224,123,58,0.25); }
+
+  .pillar-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 20px; }
+  .pillar.p1 .pillar-icon { background: rgba(42,100,150,0.2); }
+  .pillar.p2 .pillar-icon { background: rgba(26,122,110,0.2); }
+  .pillar.p3 .pillar-icon { background: rgba(90,62,138,0.2); }
+  .pillar.p4 .pillar-icon { background: rgba(224,123,58,0.2); }
+
+  .pillar-num { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 5px; }
+  .pillar.p1 .pillar-num { color: var(--c1); }
+  .pillar.p2 .pillar-num { color: var(--c2); }
+  .pillar.p3 .pillar-num { color: var(--c3); }
+  .pillar.p4 .pillar-num { color: var(--c4); }
+
+  .pillar-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; line-height: 1.25; }
+  .pillar-resp { font-size: 11.5px; color: var(--text-muted); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+  .pillar-resp::before { content: '👤'; font-size: 10px; }
+  .pillar-resp.multi::before { content: '🔗'; }
+
+  .pillar-modules { margin-bottom: 18px; }
+  .pillar-mod-item { font-size: 11.5px; color: var(--text-muted); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 7px; }
+  .pillar-mod-item:last-child { border-bottom: none; }
+  .pillar-mod-item::before { content: '·'; font-size: 16px; line-height: 1.2; flex-shrink: 0; }
+  .pillar.p1 .pillar-mod-item::before { color: var(--c1); }
+  .pillar.p2 .pillar-mod-item::before { color: var(--c2); }
+  .pillar.p3 .pillar-mod-item::before { color: var(--c3); }
+  .pillar.p4 .pillar-mod-item::before { color: var(--c4); }
+
+  .pillar-count { font-size: 12px; color: var(--text-muted); padding-top: 14px; border-top: 1px solid var(--divider); display: flex; align-items: center; gap: 8px; }
+  .pillar-count strong { color: var(--text); font-size: 20px; font-family: 'Playfair Display', serif; }
+
+  /* ERP spans badge */
+  .erp-spans {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  .erp-span-badge {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid;
+  }
+  .erp-span-badge.s1 { color: var(--c1); border-color: var(--c1-border); background: var(--c1-bg); }
+  .erp-span-badge.s2 { color: var(--c2); border-color: var(--c2-border); background: var(--c2-bg); }
+  .erp-span-badge.s3 { color: var(--c3); border-color: var(--c3-border); background: var(--c3-bg); }
+
+  /* MÓDULOS */
+  .modules { margin-bottom: 72px; animation: fadeUp 0.8s 0.35s ease both; }
+  .modules-area { margin-bottom: 56px; }
+  .area-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; padding: 20px 24px; border-radius: 12px; border: 1px solid; }
+  .area-header.c1 { border-color: var(--c1-border); background: var(--c1-bg); }
+  .area-header.c2 { border-color: var(--c2-border); background: var(--c2-bg); }
+  .area-header.c3 { border-color: var(--c3-border); background: var(--c3-bg); }
+  .area-header.c4 { border-color: var(--c4-border); background: var(--c4-bg); }
+  .area-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .c1 .area-dot { background: var(--c1); }
+  .c2 .area-dot { background: var(--c2); }
+  .c3 .area-dot { background: var(--c3); }
+  .c4 .area-dot { background: var(--c4); }
+  .area-header-text h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; }
+  .area-header-text p { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+  .mod-group-block { margin-bottom: 28px; }
+  .mod-group-label { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; padding: 8px 14px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; }
+  .c1 .mod-group-label { color: var(--c1); background: rgba(74,163,216,0.08); border: 1px solid rgba(74,163,216,0.2); }
+  .c2 .mod-group-label { color: var(--c2); background: rgba(42,184,159,0.08); border: 1px solid rgba(42,184,159,0.2); }
+  .c3 .mod-group-label { color: var(--c3); background: rgba(139,101,197,0.08); border: 1px solid rgba(139,101,197,0.2); }
+  .c4 .mod-group-label { color: var(--c4); background: rgba(224,123,58,0.08); border: 1px solid rgba(224,123,58,0.2); }
+
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+  .mod-card { background: rgba(26,47,69,0.5); border: 1px solid var(--divider); border-radius: 10px; padding: 16px 18px; transition: all 0.25s ease; }
+  .mod-card:hover { background: rgba(26,47,69,0.9); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .mod-card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 5px; }
+  .c1 .mod-card-label { color: var(--c1); }
+  .c2 .mod-card-label { color: var(--c2); }
+  .c3 .mod-card-label { color: var(--c3); }
+  .c4 .mod-card-label { color: var(--c4); }
+  .mod-card-name { font-size: 13.5px; font-weight: 500; line-height: 1.35; color: var(--text); }
+
+  .mod-card.highlight { border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.05); }
+  .moved-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); border-radius: 10px; padding: 2px 7px; margin-top: 6px; }
+
+  /* SUB-ABAS */
+  .sub-cards-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); align-items: center; }
+  .sub-tag-label { font-size: 10px; color: var(--text-muted); }
+  .sub-tag { font-size: 11px; padding: 4px 10px; border-radius: 20px; font-weight: 500; }
+  .c1 .sub-tag { color: var(--c1); background: rgba(74,163,216,0.1); border: 1px solid rgba(74,163,216,0.25); }
+  .c2 .sub-tag { color: var(--c2); background: rgba(42,184,159,0.1); border: 1px solid rgba(42,184,159,0.25); }
+  .c3 .sub-tag { color: var(--c3); background: rgba(139,101,197,0.1); border: 1px solid rgba(139,101,197,0.25); }
+  .c4 .sub-tag { color: var(--c4); background: rgba(224,123,58,0.1); border: 1px solid rgba(224,123,58,0.25); }
+
+  /* MÓDULO ÚNICO */
+  .mod-card-single { background: rgba(26,47,69,0.5); border: 1px solid var(--divider); border-radius: 10px; padding: 18px 22px; display: flex; align-items: center; gap: 16px; }
+  .mod-card-single .icon-box { font-size: 20px; flex-shrink: 0; }
+
+  /* ERP CARD ESPECIAL — largo com conexão entre áreas */
+  .erp-card-wide {
+    background: rgba(224,123,58,0.06);
+    border: 1px solid rgba(224,123,58,0.25);
+    border-radius: 12px;
+    padding: 22px 24px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .erp-card-wide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
+  }
+  .erp-card-wide:hover { background: rgba(224,123,58,0.1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .erp-card-wide .mod-card-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+  .erp-areas-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .erp-area-tag { font-size: 10px; padding: 3px 9px; border-radius: 20px; font-weight: 600; }
+  .erp-area-tag.t1 { color: var(--c1); background: var(--c1-bg); border: 1px solid var(--c1-border); }
+  .erp-area-tag.t2 { color: var(--c2); background: var(--c2-bg); border: 1px solid var(--c2-border); }
+  .erp-area-tag.t3 { color: var(--c3); background: var(--c3-bg); border: 1px solid var(--c3-border); }
+
+  /* FLEX DB BANNER */
+  .flexdb-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 22px;
+    background: linear-gradient(135deg, rgba(224,123,58,0.1), rgba(224,123,58,0.04));
+    border: 1px solid rgba(224,123,58,0.3);
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  .flexdb-icon { font-size: 24px; flex-shrink: 0; }
+  .flexdb-text strong { font-size: 13px; color: var(--c4); font-weight: 600; display: block; margin-bottom: 2px; }
+  .flexdb-text span { font-size: 12px; color: var(--text-muted); }
+
+  /* INDICADORES */
+  .indicators { margin-bottom: 72px; animation: fadeUp 0.8s 0.5s ease both; }
+  .ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .ind-block { background: var(--card-bg); border: 1px solid var(--divider); border-radius: 14px; padding: 24px; }
+  .ind-block-title { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--divider); }
+  .ind-block:nth-child(1) .ind-block-title { color: var(--c1); }
+  .ind-block:nth-child(2) .ind-block-title { color: var(--c2); }
+  .ind-block:nth-child(3) .ind-block-title { color: var(--c3); }
+  .ind-block:nth-child(4) .ind-block-title { color: var(--c4); }
+  .ind-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 12.5px; line-height: 1.4; color: var(--text-muted); }
+  .ind-item::before { content: '→'; flex-shrink: 0; margin-top: 1px; }
+  .ind-block:nth-child(1) .ind-item::before { color: var(--c1); }
+  .ind-block:nth-child(2) .ind-item::before { color: var(--c2); }
+  .ind-block:nth-child(3) .ind-item::before { color: var(--c3); }
+  .ind-block:nth-child(4) .ind-item::before { color: var(--c4); }
+
+  /* LEGENDA */
+  .legend-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; padding: 20px 28px; background: var(--card-bg); border: 1px solid var(--divider); border-radius: 12px; margin-bottom: 72px; animation: fadeUp 0.8s 0.6s ease both; }
+  .legend-title { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); }
+  .legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+  .ld-meta { background: #c9a84c; } .ld-atraso { background: #e05c5c; } .ld-realizado { background: #2ab89f; } .ld-indefinido { background: #666c7a; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--divider); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; animation: fadeUp 0.8s 0.7s ease both; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); font-weight: 700; }
+  .footer-date { font-size: 12px; color: var(--text-muted); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 1100px) {
+    .structure-grid { grid-template-columns: repeat(2, 1fr); }
+    .ind-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 720px) {
+    .page { padding: 0 20px 60px; }
+    .structure-grid, .ind-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <div class="eyebrow">Consultoria Estratégica Empresarial</div>
+      <h1>Visão Geral do<br><span>Projeto de Consultoria</span></h1>
+    </div>
+    <div class="header-meta">
+      <strong>Documento de Apresentação</strong>
+      Abril · 2025<br>Uso Interno — Confidencial
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-number">4</div><div class="stat-label">Grandes Áreas<br>de Atuação</div></div>
+    <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Consultores<br>Especialistas</div></div>
+    <div class="stat-card"><div class="stat-number">40</div><div class="stat-label">Atividades<br>Mapeadas</div></div>
+    <div class="stat-card"><div class="stat-number">11</div><div class="stat-label">Indicadores de<br>Desempenho (KPIs)</div></div>
+  </div>
+
+  <!-- PILARES -->
+  <div class="structure">
+    <div class="section-label">As Quatro Grandes Áreas de Consultoria</div>
+    <div class="structure-grid">
+
+      <div class="pillar p1">
+        <div class="pillar-icon">💰</div>
+        <div class="pillar-num">Área 01</div>
+        <div class="pillar-title">Controles Financeiros</div>
+        <div class="pillar-resp">Luiz Stênio</div>
+        <div class="pillar-modules">
+          <div class="pillar-mod-item">Módulo A · Desempenho Financeiro</div>
+          <div class="pillar-mod-item">Módulo B · Controladoria Financeira</div>
+          <div class="pillar-mod-item">Módulo C · Fluxo de Caixa</div>
+        </div>
+        <div class="pillar-count"><strong>3</strong> módulos · 17 atividades</div>
+      </div>
+
+      <div class="pillar p2">
+        <div class="pillar-icon">📊</div>
+        <div class="pillar-num">Área 02</div>
+        <div class="pillar-title">Controladoria e Contabilidade</div>
+        <div class="pillar-resp">Hernandes</div>
+        <div class="pillar-modules">
+          <div class="pillar-mod-item">Módulo A · Desempenho Econômico</div>
+          <div class="pillar-mod-item">Módulo B · Controladoria Gerencial</div>
+          <div class="pillar-mod-item">Módulo C · Contratos e Financiamentos</div>
+        </div>
+        <div class="pillar-count"><strong>3</strong> módulos · 17 atividades</div>
+      </div>
+
+      <div class="pillar p3">
+        <div class="pillar-icon">📦</div>
+        <div class="pillar-num">Área 03</div>
+        <div class="pillar-title">Controle de Estoque</div>
+        <div class="pillar-resp">Deusângelo</div>
+        <div class="pillar-modules">
+          <div class="pillar-mod-item">Módulo A · Desempenho Comercial (KPIs)</div>
+          <div class="pillar-mod-item">Módulo B · Gestão Comercial (Processos)</div>
+        </div>
+        <div class="pillar-count"><strong>2</strong> módulos · 17 atividades</div>
+      </div>
+
+      <div class="pillar p4">
+        <div class="pillar-icon">⚙️</div>
+        <div class="pillar-num">Área 04 — Transversal</div>
+        <div class="pillar-title">Integração ERP</div>
+        <div class="pillar-resp multi">Todas as Áreas · Flex DB</div>
+        <div class="pillar-modules">
+          <div class="pillar-mod-item">Plano de Contas</div>
+          <div class="pillar-mod-item">Contabilização dos Documentos</div>
+          <div class="pillar-mod-item">Validação de Documentos</div>
+          <div class="pillar-mod-item">Parametrização das Áreas</div>
+        </div>
+        <div class="erp-spans">
+          <span class="erp-span-badge s1">Financeiro</span>
+          <span class="erp-span-badge s2">Controladoria</span>
+          <span class="erp-span-badge s3">Estoque</span>
+        </div>
+        <div class="pillar-count" style="margin-top:12px;"><strong>4</strong> atividades · base sistêmica</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MÓDULOS DETALHADOS -->
+  <div class="modules">
+    <div class="section-label">Detalhamento das Atividades por Módulo</div>
+
+    <!-- ÁREA 1 -->
+    <div class="modules-area c1">
+      <div class="area-header c1">
+        <div class="area-dot"></div>
+        <div class="area-header-text">
+          <h3>Controles Financeiros — Luiz Stênio</h3>
+          <p>3 módulos · Desempenho Financeiro · Controladoria Financeira · Fluxo de Caixa</p>
+        </div>
+      </div>
+
+      <div class="mod-group-block c1">
+        <div class="mod-group-label">Módulo A — Desempenho Financeiro</div>
+        <div class="cards-grid">
+          <div class="mod-card c1"><div class="mod-card-label">Indicador 2.0</div><div class="mod-card-name">Comportamento de Lucro</div></div>
+          <div class="mod-card c1"><div class="mod-card-label">Indicador 2.1</div><div class="mod-card-name">Auditoria do Mecanismo</div></div>
+          <div class="mod-card c1"><div class="mod-card-label">Indicador 2.2</div><div class="mod-card-name">Comprometimento Capital de Terceiros</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Folha de Pagamento</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Conciliação de Bancos</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Controle de Caixas e Numerários</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Acordos Comerciais</div><div class="moved-badge">↑ integrado</div></div>
+        </div>
+      </div>
+
+      <div class="mod-group-block c1">
+        <div class="mod-group-label">Módulo B — Controladoria Financeira</div>
+        <div class="cards-grid">
+          <div class="mod-card c1"><div class="mod-card-label">Processo</div><div class="mod-card-name">Contabilização e Auditoria em PDV</div></div>
+          <div class="mod-card c1"><div class="mod-card-label">Processo</div><div class="mod-card-name">Conciliação Bancária</div></div>
+          <div class="mod-card c1">
+            <div class="mod-card-label">Processo · Sub-etapas</div>
+            <div class="mod-card-name">Recebimentos</div>
+            <div class="sub-cards-row">
+              <span class="sub-tag-label">↳</span>
+              <span class="sub-tag">Clientes</span>
+              <span class="sub-tag">Fornecedores</span>
+              <span class="sub-tag">Funcionários</span>
+            </div>
+          </div>
+          <div class="mod-card c1"><div class="mod-card-label">Processo</div><div class="mod-card-name">Pagamentos e Baixas — Contas a Pagar</div></div>
+          <div class="mod-card c1"><div class="mod-card-label">Processo</div><div class="mod-card-name">Contratos de Financiamentos Bancários</div></div>
+        </div>
+      </div>
+
+      <div class="mod-group-block c1">
+        <div class="mod-group-label">Módulo C — Fluxo de Caixa Realizado</div>
+        <div class="cards-grid">
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Controle de Cofre</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Conciliação Bancária</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Contas a Pagar Liquidado</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Contas a Receber Liquidados</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Conc. Saldos Gerenciais / Financeiro</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Conc. Saldos Gerenciais / Bancários</div><div class="moved-badge">↑ integrado</div></div>
+          <div class="mod-card c1 highlight"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Conc. Saldos Gerenciais / Conta Caixa</div><div class="moved-badge">↑ integrado</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÁREA 2 -->
+    <div class="modules-area c2">
+      <div class="area-header c2">
+        <div class="area-dot"></div>
+        <div class="area-header-text">
+          <h3>Controladoria e Contabilidade — Hernandes</h3>
+          <p>3 módulos · Desempenho Econômico · Controladoria Gerencial · Contratos e Financiamentos</p>
+        </div>
+      </div>
+
+      <div class="mod-group-block c2">
+        <div class="mod-group-label">Módulo A — Desempenho Econômico</div>
+        <div class="cards-grid">
+          <div class="mod-card c2"><div class="mod-card-label">Indicador 1.0</div><div class="mod-card-name">Margem Bruta</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Indicador 1.1</div><div class="mod-card-name">Custo Operacional</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Indicador 1.2</div><div class="mod-card-name">Lucro Líquido</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Indicador 1.3</div><div class="mod-card-name">Rentabilidade por Unidade</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Indicador 1.4</div><div class="mod-card-name">Margem de Contribuição</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Indicador 1.5</div><div class="mod-card-name">Ponto de Equilíbrio Econômico</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Indicador 1.6</div><div class="mod-card-name">Índices de Desempenho</div></div>
+        </div>
+      </div>
+
+      <div class="mod-group-block c2">
+        <div class="mod-group-label">Módulo B — Controladoria Gerencial</div>
+        <div class="cards-grid">
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Uso e Consumo</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Despesas Lançadas</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Despesas Não Contabilizadas</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Conciliação Bancária</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Contratos de Empréstimos Bancários</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Conciliação de Vendas</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Impostos Provisionados</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">CMV Apurado</div></div>
+          <div class="mod-card c2"><div class="mod-card-label">Atividade</div><div class="mod-card-name">Controle de Perdas</div></div>
+        </div>
+      </div>
+
+      <div class="mod-group-block c2">
+        <div class="mod-group-label">Módulo C — Contratos e Financiamentos</div>
+        <div class="mod-card-single c2" style="max-width:420px;">
+          <div class="icon-box">🏛️</div>
+          <div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--c2);margin-bottom:4px;">Atividade</div>
+            <div style="font-size:14px;font-weight:500;">Contratos BNDES / Patrimoniais</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÁREA 3 -->
+    <div class="modules-area c3">
+      <div class="area-header c3">
+        <div class="area-dot"></div>
+        <div class="area-header-text">
+          <h3>Controle de Estoque — Deusângelo</h3>
+          <p>2 módulos · Desempenho Comercial (KPIs) e Gestão Comercial (Processos)</p>
+        </div>
+      </div>
+
+      <div class="mod-group-block c3">
+        <div class="mod-group-label">Módulo A — Desempenho Comercial (KPIs)</div>
+        <div class="cards-grid">
+          <div class="mod-card c3"><div class="mod-card-label">Indicador 4.0</div><div class="mod-card-name">Ruptura de Estoques</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Indicador 4.1</div><div class="mod-card-name">Excesso de Estoque</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Indicador 4.2</div><div class="mod-card-name">Compra × Vendas</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Indicador 4.3</div><div class="mod-card-name">Margem</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Indicador 4.4</div><div class="mod-card-name">Dias de Estoque</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Indicador 4.5</div><div class="mod-card-name">Ticket Médio</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Indicador 4.6</div><div class="mod-card-name">Mix de Produtos</div></div>
+        </div>
+      </div>
+
+      <div class="mod-group-block c3">
+        <div class="mod-group-label">Módulo B — Gestão Comercial (Processos)</div>
+        <div class="cards-grid">
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Controle de Estoques</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Inventário Rotativo</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Pedido de Compra</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Baixa do Pedido Automática</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Recebimento de Mercadoria</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Acuracidade dos Custos</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Precificação Automática</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Bonificações / Verbas</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Composição / Decomposição</div></div>
+          <div class="mod-card c3"><div class="mod-card-label">Processo</div><div class="mod-card-name">Consumo Interno</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÁREA 4 — ERP -->
+    <div class="modules-area c4">
+      <div class="area-header c4">
+        <div class="area-dot"></div>
+        <div class="area-header-text">
+          <h3>Integração ERP — Flex DB</h3>
+          <p>Área transversal · Abrange as três grandes áreas de consultoria · Base sistêmica do projeto</p>
+        </div>
+      </div>
+
+      <div class="flexdb-banner">
+        <div class="flexdb-icon">🖥️</div>
+        <div class="flexdb-text">
+          <strong>Sistema Flex DB</strong>
+          <span>Todas as atividades desta área são fundamentadas e integradas ao sistema Flex DB, servindo como base operacional para os módulos de Controles Financeiros, Controladoria e Contabilidade e Controle de Estoque.</span>
+        </div>
+      </div>
+
+      <div class="mod-group-block c4">
+        <div class="mod-group-label">Atividades de Integração ERP</div>
+        <div class="cards-grid">
+
+          <div class="erp-card-wide">
+            <div class="mod-card-label c4" style="color:var(--c4);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">Atividade ERP</div>
+            <div class="mod-card-name">Plano de Contas</div>
+            <div class="erp-areas-row">
+              <span class="erp-area-tag t1">Financeiro</span>
+              <span class="erp-area-tag t2">Controladoria</span>
+              <span class="erp-area-tag t3">Estoque</span>
+            </div>
+          </div>
+
+          <div class="erp-card-wide">
+            <div class="mod-card-label c4" style="color:var(--c4);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">Atividade ERP</div>
+            <div class="mod-card-name">Contabilização dos Documentos</div>
+            <div class="erp-areas-row">
+              <span class="erp-area-tag t1">Financeiro</span>
+              <span class="erp-area-tag t2">Controladoria</span>
+              <span class="erp-area-tag t3">Estoque</span>
+            </div>
+          </div>
+
+          <div class="erp-card-wide">
+            <div class="mod-card-label c4" style="color:var(--c4);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">Atividade ERP · Sub-etapas</div>
+            <div class="mod-card-name">Validação de Documentos</div>
+            <div class="sub-cards-row" style="border-top-color:rgba(224,123,58,0.15);">
+              <span class="sub-tag-label">↳</span>
+              <span class="sub-tag" style="color:var(--c1);background:var(--c1-bg);border:1px solid var(--c1-border);">Estoques</span>
+              <span class="sub-tag" style="color:var(--c2);background:var(--c2-bg);border:1px solid var(--c2-border);">Financeiros</span>
+              <span class="sub-tag" style="color:var(--c3);background:var(--c3-bg);border:1px solid var(--c3-border);">Fiscal</span>
+            </div>
+          </div>
+
+          <div class="erp-card-wide">
+            <div class="mod-card-label c4" style="color:var(--c4);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">Atividade ERP</div>
+            <div class="mod-card-name">Parametrização para as Áreas de Atuação</div>
+            <div class="erp-areas-row">
+              <span class="erp-area-tag t1">Financeiro</span>
+              <span class="erp-area-tag t2">Controladoria</span>
+              <span class="erp-area-tag t3">Estoque</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /modules -->
+
+  <!-- INDICADORES ESTRATÉGICOS -->
+  <div class="indicators">
+    <div class="section-label">Indicadores Estratégicos de Monitoramento</div>
+    <div class="ind-grid">
+      <div class="ind-block">
+        <div class="ind-block-title">💰 Controles Financeiros</div>
+        <div class="ind-item">Comportamento de Lucro e Comprometimento de Capital</div>
+        <div class="ind-item">Folha de Pagamento e Controle de Caixas / Numerários</div>
+        <div class="ind-item">Conciliação de Bancos e Acordos Comerciais</div>
+        <div class="ind-item">Recebimentos: Clientes, Fornecedores e Funcionários</div>
+        <div class="ind-item">Fluxo de Caixa Realizado e Contas Liquidadas</div>
+      </div>
+      <div class="ind-block">
+        <div class="ind-block-title">📊 Controladoria e Contabilidade</div>
+        <div class="ind-item">Margem Bruta, Lucro Líquido e Ponto de Equilíbrio</div>
+        <div class="ind-item">CMV Apurado e Impostos Provisionados</div>
+        <div class="ind-item">Conciliação Bancária e Conciliação de Vendas</div>
+        <div class="ind-item">Controle de Perdas e Despesas Não Contabilizadas</div>
+        <div class="ind-item">Contratos BNDES / Patrimoniais</div>
+      </div>
+      <div class="ind-block">
+        <div class="ind-block-title">📦 Controle de Estoque</div>
+        <div class="ind-item">Taxa de Ruptura e Excesso de Estoque</div>
+        <div class="ind-item">Acuracidade de Custos e Precificação Automática</div>
+        <div class="ind-item">Relação Compra × Vendas e Margem</div>
+        <div class="ind-item">Ticket Médio e Mix de Produtos</div>
+        <div class="ind-item">Dias de Cobertura de Estoque</div>
+      </div>
+      <div class="ind-block">
+        <div class="ind-block-title">⚙️ Integração ERP</div>
+        <div class="ind-item">Plano de Contas estruturado no Flex DB</div>
+        <div class="ind-item">Contabilização e validação de documentos</div>
+        <div class="ind-item">Validação: Estoques · Financeiros · Fiscal</div>
+        <div class="ind-item">Parametrização sistêmica para todas as áreas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGENDA -->
+  <div class="legend-row">
+    <span class="legend-title">Legenda de Status</span>
+    <span class="legend-item"><span class="legend-dot ld-meta"></span> Meta / Planejado</span>
+    <span class="legend-item"><span class="legend-dot ld-realizado"></span> Realizado</span>
+    <span class="legend-item"><span class="legend-dot ld-atraso"></span> Em Atraso</span>
+    <span class="legend-item"><span class="legend-dot ld-indefinido"></span> Indefinido</span>
+    <span style="font-size:12px;color:var(--text-muted);margin-left:auto;">Os status serão aplicados no cronograma detalhado</span>
+  </div>
+
+  <footer>
+    <div class="footer-brand">Consultoria Estratégica Empresarial</div>
+    <div class="footer-date">Documento gerado em Abril · 2025 · Uso Interno e Confidencial</div>
+  </footer>
+
+</div>
+
+
+</body></html>
